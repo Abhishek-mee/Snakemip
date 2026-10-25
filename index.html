@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#dcefd2" />
+  <title>Snakemip</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <h1 class="sr-only">Snake</h1>
+    <header class="hud">
+      <div class="stat">
+        <span class="label">Score</span>
+        <span id="score" aria-live="polite">0000</span>
+      </div>
+      <div class="logo-wrap">
+        <canvas id="gameLogo" class="game-logo" width="173" height="41" aria-hidden="true">SNAKE</canvas>
+      </div>
+      <div class="stat">
+        <span class="label">Best</span>
+        <span id="best">0000</span>
+      </div>
+    </header>
+
+    <div class="board-wrap">
+      <canvas id="board" width="600" height="600" aria-label="Snake game board">
+        Your browser does not support the canvas element.
+      </canvas>
+
+      <div class="overlay" id="overlay">
+        <div class="overlay-panel">
+          <p class="eyebrow" id="overlayEyebrow">Classic mode</p>
+          <h2 id="overlayTitle">Snake</h2>
+          <p id="overlayText">Eat the apples, grow longer, and don't hit the walls or yourself.</p>
+          <button class="action" id="actionBtn" type="button">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dpad" role="group" aria-label="Direction controls">
+      <button type="button" data-dir="0,-1" aria-label="Up">&#9650;</button>
+      <button type="button" data-dir="-1,0" aria-label="Left">&#9664;</button>
+      <button type="button" data-dir="0,1" aria-label="Down">&#9660;</button>
+      <button type="button" data-dir="1,0" aria-label="Right">&#9654;</button>
+    </div>
+
+    <footer class="help">
+      <span><kbd>Arrows</kbd> / <kbd>WASD</kbd> move</span>
+      <span><kbd>Space</kbd> pause</span>
+      <span><kbd>R</kbd> restart</span>
+    </footer>
+  </main>
+
+  <script src="snake.js"></script>
+</body>
+</html>
